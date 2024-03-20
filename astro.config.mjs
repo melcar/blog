@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://beltus.be',
+	site: 'https://blog.beltus.be',
 	integrations: [mdx(), sitemap()],
 });
