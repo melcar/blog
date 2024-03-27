@@ -6,7 +6,7 @@ export async function getStaticPaths() : Promise<any>{
   const allPosts = await Astro.glob('../../../content/blog/*.md');
 
   const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
-  console.log(uniqueTags);
+
   uniqueTags.sort() 
   const allTagsCombination = [];
 // generate all tags combinations but all combination is unique as we always use tags in alphabetical order. 
@@ -15,7 +15,6 @@ export async function getStaticPaths() : Promise<any>{
     for (let tagsToSkip=0; tagsToSkip< uniqueTags.length - tagIndex; tagsToSkip++)
     allTagsCombination.push(([uniqueTags[tagIndex]].concat( uniqueTags.slice(tagIndex+tagsToSkip+1))).join("&"));// +1 as we skip the current tag
   }
-  console.log(allTagsCombination);
   return allTagsCombination.map((tag) => {
     const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
     return {
