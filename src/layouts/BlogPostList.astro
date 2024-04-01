@@ -7,10 +7,12 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import type { CollectionEntry } from 'astro:content';
 
+//@ts-ignore
 type Props = CollectionEntry<'blogList'>['data'];
 const {posts, pageTitle = ""}= Astro.props;
 
 const sorted_posts = (posts).sort(
+//@ts-ignore
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -104,8 +106,9 @@ const sorted_posts = (posts).sort(
 			<section>
 				<ul>
 					{
+//@ts-ignore
 						posts.map((post) => (
-							<li>
+							<li><div></div>
 								<a href={`/blog/${post.slug}/`}>
 									<img
 										width={720}
@@ -121,8 +124,8 @@ const sorted_posts = (posts).sort(
 									</p>
 								</a>
 								<div class="alignButton">
-							{post.data.tags!.map((tag) => <a href={`/blog/tags/${tag}`}><button class="button">{tag}</a></button></a>)}
-							</div>
+							{post.data.tags!.map((tag: string) => <a href={`/blog/tags/${tag}`}><button class="button">{tag}</a></button></a>)}
+							</div></div>
 							</li>
 						))
 					}
