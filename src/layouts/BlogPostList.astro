@@ -2,8 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../components/tagStyle.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import type { CollectionEntry } from 'astro:content';
 
@@ -74,29 +74,6 @@ const sorted_posts = (posts).sort(
 					text-align: center;
 				}
 			}
-			.button{
-  background-color: #ddd;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-  width: fit-content;
-}
-.button:hover{
-  background-color: #000;
-  color:#ddd;
-}
-.alignButton{
-	display:flex;
-	flex-direction:row; 
-	justify-content: left; 
-	align-items: center
-}
 		</style>
 	</head>
 	<body>
