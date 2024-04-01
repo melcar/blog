@@ -5,6 +5,7 @@ pubDate: 'Mar 17 2024'
 heroImage: '/blog-placeholder-3.jpg'
 tags:
      - General
+     - Rust
 ---
 First entry in my blog. In here I will post about the projects I am working on, what I find interesting in them and the issues I face and how I solved them.
 

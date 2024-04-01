@@ -1,0 +1,134 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'blogList'>['data'];
+const {posts, pageTitle = ""}= Astro.props;
+
+const sorted_posts = (posts).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+			}
+			ul {
+				display: block;
+				flex-wrap: wrap;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				margin-left: auto;
+				margin-right: auto;
+				width: calc(70% - 1rem);
+			}
+			ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			ul li img {
+				margin-bottom: 0.5rem;
+				border-radius: 12px;
+			}
+			ul li a {
+				display: grid;
+			}
+			.title {
+				margin: 0;
+				color: rgb(var(--black));
+				line-height: 1;
+			}
+			.date {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			ul li a:hover h4,
+			ul li a:hover .date {
+				color: rgb(var(--accent));
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow);
+			}
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+				ul li {
+					width: 100%;
+					text-align: center;
+				}
+			}
+			.button{
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  width: fit-content;
+}
+.button:hover{
+  background-color: #000;
+  color:#ddd;
+}
+.alignButton{
+	display:flex;
+	flex-direction:row; 
+	justify-content: left; 
+	align-items: center
+}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h4>{pageTitle}</h4>
+			<section>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.slug}/`}>
+									<img
+										width={720}
+										height={360}
+										src={post.data.heroImage}
+										alt=""
+									/>
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate
+											date={post.data.pubDate}
+										/>
+									</p>
+								</a>
+								<div class="alignButton">
+							{post.data.tags!.map((tag) => <a href={`/blog/tags/${tag}`}><button class="button">{tag}</a></button></a>)}
+							</div>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
