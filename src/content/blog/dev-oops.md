@@ -1,5 +1,5 @@
 ---
-title: Dev-Oups
+title: Dev-Oops
 description: Publishing rust documentation on git.
 pubDate: Apr 3 2024
 heroImage: /blog-placeholder-3.jpg
