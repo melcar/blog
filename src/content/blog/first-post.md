@@ -1,11 +1,13 @@
 ---
-title: 'First post'
-description: 'First entry in the blog'
-pubDate: 'Mar 17 2024'
-heroImage: '/blog-placeholder-3.jpg'
+title: First post
+description: First entry in the blog
+pubDate: Mar 17 2024
+heroImage: /blog-placeholder-3.jpg
 tags:
      - General
      - Rust
+categories:
+     - Published
 ---
 First entry in my blog. In here I will post about the projects I am working on, what I find interesting in them and the issues I face and how I solved them.
 

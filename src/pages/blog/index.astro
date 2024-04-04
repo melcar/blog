@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import BlogPostList from "../../layouts/BlogPostList.astro";
-const posts = (await getCollection('blog')).sort(
+import {Categories} from "../../categories.ts";
+const posts = (await getCollection('blog')).filter(post => post.data.categories?.includes(Categories.ToDo)).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---

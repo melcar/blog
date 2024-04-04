@@ -4,9 +4,11 @@ description: Publishing rust documentation on git.
 pubDate: Apr 3 2024
 heroImage: /blog-placeholder-3.jpg
 tags:
-     - Rust
-     - CMPRSD
-     - Dev-Ops
+    - Rust
+    - CMPRSD
+    - Dev-Ops
+categories:
+    - Published
 ---
 
 Finally, the (empty) [documentation](https://cmprsd.beltus.be/doc/cmprsd/index.html) of the CMPRSD project is online! To deploy it I used the same tool as for the rest of my projects,  [github actions](https://github.com/features/actions).

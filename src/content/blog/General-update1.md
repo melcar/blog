@@ -8,6 +8,8 @@ tags:
     - General
     - Root me
     - CMPRSD
+categories:
+    - Published
 ---
 
 This is the second article of this blog and already a few weeks have passed by. I have been pretty busy and I have not found time or motivation to sit down and do some of the bigger changes I am planning on doing.
