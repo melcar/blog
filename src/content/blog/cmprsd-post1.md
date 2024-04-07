@@ -2,6 +2,7 @@
 title: CMPRSD - What?
 description: What is it?
 pubDate: Apr 6 2024
+updatedDate: Apr 4 2024
 heroImage: /blog-placeholder-3.jpg
 tags:
      - Rust
@@ -23,7 +24,7 @@ I came up with the following list :
 
 You can expect at some points for the other subjects to be explored too. The next one should be a follow-up on my master thesis on polygon triangulation on GPU, but this time better executed. 
 
-I know, currently, only one algorithm is implemented, but I already have quite a roadmap planned out.
+I know, currently, only one algorithm is implemented, but I already have quite a roadmap planned out thanks to ChatGPT whom I asked for a roadmap to start a project on compression algorithms.
 - Lossless compression (Huffman, [BWT](https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform), LZ77/78)
 - Lossy compression (images, audio... )
 - adaptive compression
